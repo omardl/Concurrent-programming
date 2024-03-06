@@ -31,8 +31,14 @@ Para ello, inicialmente se parte de la base de que en cada nodo se podrán reali
 - Anulación, por parte de los clientes (prioridad 3)
 - Reservas, por parte de los clientes (prioridad 2)
 - Consultas, por parte de los clientes (prioridad 1)
+
+
 A mayores de seguir el orden de prioridad, todos los procesos serán concurrentes y por tanto, no podrán realizarse a la vez, tanto con procesos de otras prioridades como con otros procesos de igual prioridad. Para ello, el sistema distribuido tendrá un testigo que se irá pasando y solicitando entre los diferentes nodos, y sólo cuando un nodo disponga de éste podrá realizar sus procesos en orden de prioridad y uno por uno. En el testigo, también se envían que procesos de qué prioridad están en espera en otros nodos, para que nodo con el testigo sepa a quién lo debe enviar una vez sus procesos prioritarios acaben. Además, si surge un proceso más prioritario en otro nodo, informará a todos los nodos (no sabiendo cuál tiene el testigo) para que actualice dicha información en el testigo.
+
+
 A excepción del resto, los procesos de consultas no serán concurrentes y por tanto todos los nodos podrán realizarlos a la vez. Para ello, el nodo con el testigo enviará una serie de minitestigos que indicarán que sí pueden realizar procesos de consultas (cuando sólo estén pendientes procesos de consultas en el mismo y no haya otros de mayor prioridad en los demás nodos), hasta que un proceso de mayor prioridad aparezca en el sistema y el nodo con el testigo solicite la recuperación de minitestigos y continúe el proceso.
+
+
 Además, para evitar problemas de inanición, cada nodo estará limitado a realizar un número máximo de procesos de igual prioridad si hay otros nodos que también están a la espera para ello, evitando así una situación de bloqueo.
 
 # Diagramas de flujo
