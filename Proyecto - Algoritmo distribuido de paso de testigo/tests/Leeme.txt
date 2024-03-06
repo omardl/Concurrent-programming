@@ -1,0 +1,55 @@
+TESTS:
+
+PRUEBA 0:
+
+-Vaciar las colas si tienen algún mensaje residuo
+./vaciar 6
+
+-iniciar las colas y mandar el testigo a un nodo
+Terminal 1
+./iniciador 6
+
+Terminal 2
+./nodo 6 1
+
+Terminal 1
+./prueba0.sh
+
+PRUEBAS 1,2,3:
+-Vaciar las colas si tienen algún mensaje residuo
+./vaciar 6
+
+Terminal 1
+./iniciador 6
+
+en 6 terminales diferentes:
+./nodo 6 0
+./nodo 6 1
+./nodo 6 2
+./nodo 6 3
+./nodo 6 4
+./nodo 6 5
+
+Terminal 1
+./prueba1.sh ó ./prueba2.sh ó ./prueba3.sh
+
+
+PRUEBA 4
+-Vaciar las colas si tienen algún mensaje residuo
+./vaciar 6
+
+Terminal 1
+./iniciador 6
+
+en 6 terminales diferentes:
+./nodo 6 0
+./nodo 6 1
+./nodo 6 2
+./nodo 6 3
+./nodo 6 4
+./nodo 6 5
+
+ ejecutar los 3 scripts uno después de otro en el Terminal 1:
+./prueba1.sh
+./prueba2.sh
+./prueba3.sh
