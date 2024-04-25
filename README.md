@@ -51,3 +51,9 @@ Además, para evitar problemas de inanición, cada nodo estará limitado a reali
 ## Diagrama del proceso de recepción en el nodo
 ![diagrama3](https://github.com/omardl/Concurrent-programming--PCCD-GET-UVigo/assets/105445540/235f160a-0675-484f-bd7e-8debb461016c)
 
+### Autores
+- Omar Delgado
+- María Boado
+- Julen Beiro
+- Adrián González
+
